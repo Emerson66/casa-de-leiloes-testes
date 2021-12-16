@@ -21,7 +21,9 @@ class AvaliadorTest {
         Avaliador leiloeiro = new Avaliador();
         leiloeiro.avalia(leilao);
 
-//        imprime 400
+//  imprime 400
         System.out.println(leiloeiro.getMaiorDeTodos());
+//  imprime 250
+        System.out.println(leiloeiro.getMenorDeTodos());
     }
 }
