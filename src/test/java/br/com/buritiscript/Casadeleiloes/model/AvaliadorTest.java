@@ -1,13 +1,13 @@
-package test;
+package br.com.buritiscript.Casadeleiloes.model;
 
-import model.Avaliador;
-import model.Lance;
-import model.Leilao;
-import model.Usuario;
+
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class AvaliadorTest {
 
-    public static void main(String[] args) {
+    @Test
+    public void deveEntenderLancesEmOrdemCrescente() {
 //      cenario: 3 lances em ordem crescente
         Usuario joao = new Usuario("João");
         Usuario maria = new Usuario("Maria");
@@ -24,7 +24,10 @@ class AvaliadorTest {
         leiloeiro.avalia(leilao);
 
 //      exibindo a saída
-        System.out.println(leiloeiro.getMaiorDeTodos());
-        System.out.println(leiloeiro.getMenorDeTodos());
+        double maiorEsperado = 400.0;
+        double menorEsperado = 250.0;
+
+        assertEquals(leiloeiro.getMaiorDeTodos(), maiorEsperado, 0.0001);
+        assertEquals(leiloeiro.getMenorDeTodos(), menorEsperado, 0.0001);
     }
 }

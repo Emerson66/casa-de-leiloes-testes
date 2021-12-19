@@ -1,4 +1,4 @@
-package model;
+package br.com.buritiscript.Casadeleiloes.model;
 
 public class Avaliador {
     private double maiorDeTodos = Double.NEGATIVE_INFINITY;
@@ -8,7 +8,9 @@ public class Avaliador {
         for (Lance lance : leilao.getLances()) {
             if (lance.getValor() > maiorDeTodos) {
                 maiorDeTodos = lance.getValor();
-            } else if (lance.getValor() < menorDeTodos) {
+            }
+
+            if (lance.getValor() < menorDeTodos) {
                 menorDeTodos = lance.getValor();
             }
         }

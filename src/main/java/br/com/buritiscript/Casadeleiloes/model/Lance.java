@@ -1,4 +1,4 @@
-package model;
+package br.com.buritiscript.Casadeleiloes.model;
 
 public class Lance {
     private Usuario usuario;

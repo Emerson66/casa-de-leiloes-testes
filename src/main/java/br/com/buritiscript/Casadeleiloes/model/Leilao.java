@@ -1,10 +1,9 @@
-package model;
+package br.com.buritiscript.Casadeleiloes.model;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Leilao {
-
     private String item;
     private List<Lance> lances = new ArrayList<>();
 
