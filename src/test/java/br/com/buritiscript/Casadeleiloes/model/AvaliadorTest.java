@@ -27,7 +27,32 @@ class AvaliadorTest {
         double maiorEsperado = 400.0;
         double menorEsperado = 250.0;
 
-        assertEquals(leiloeiro.getMaiorDeTodos(), maiorEsperado, 0.0001);
-        assertEquals(leiloeiro.getMenorDeTodos(), menorEsperado, 0.0001);
+        assertEquals(maiorEsperado, leiloeiro.getMaiorDeTodos(),0.0001);
+        assertEquals(menorEsperado, leiloeiro.getMenorDeTodos(),0.0001);
+    }
+
+    @Test
+    public void deveEntenderLancesEmOrdemCrescenteComOutrosValores(){
+//      Cenario: 3 lances
+        var maria = new Usuario("Maria");
+        var jose = new Usuario("José");
+        var joao = new Usuario("João");
+
+        var leilao = new Leilao("Maquina de Lavar");
+
+        leilao.propoe(new Lance(maria, 6000.0));
+        leilao.propoe(new Lance(joao, 1000.0));
+        leilao.propoe(new Lance(jose, 5000.0));
+
+        double maiorEsperado = 6000.0;
+        double menorEsperado = 1000.0;
+
+//      Executando a ação
+        Avaliador leiloeiro = new Avaliador();
+        leiloeiro.avalia(leilao);
+
+//      exibindo a saída
+        assertEquals(maiorEsperado, leiloeiro.getMaiorDeTodos(), 0.00001);
+        assertEquals(menorEsperado, leiloeiro.getMenorDeTodos(), 0.00001);
     }
 }
