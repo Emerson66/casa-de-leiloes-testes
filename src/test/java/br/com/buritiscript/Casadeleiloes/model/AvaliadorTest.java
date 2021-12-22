@@ -32,7 +32,7 @@ class AvaliadorTest {
     }
 
     @Test
-    public void deveEntenderLancesEmOrdemCrescenteComOutrosValores(){
+    public void deveEntenderLancesSemUmaOrdemEspecifica(){
 //      Cenario: 3 lances
         var maria = new Usuario("Maria");
         var jose = new Usuario("José");
@@ -40,12 +40,12 @@ class AvaliadorTest {
 
         var leilao = new Leilao("Maquina de Lavar");
 
-        leilao.propoe(new Lance(maria, 6000.0));
-        leilao.propoe(new Lance(joao, 1000.0));
-        leilao.propoe(new Lance(jose, 5000.0));
+        leilao.propoe(new Lance(maria, 3000.0));
+        leilao.propoe(new Lance(joao, 5000.0));
+        leilao.propoe(new Lance(jose, 2000.0));
 
-        double maiorEsperado = 6000.0;
-        double menorEsperado = 1000.0;
+        double maiorEsperado = 5000.0;
+        double menorEsperado = 2000.0;
 
 //      Executando a ação
         Avaliador leiloeiro = new Avaliador();
